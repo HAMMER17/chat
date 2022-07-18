@@ -16,8 +16,10 @@ export default function Basket({ onClickClose, deleteCard, items = [] }) {
           <span className='span'> <CancelIcon onClick={onClickClose} /></span>
         </div>
         {/* <div className='card'> */}
+
         {items.map((elem, id) => {
-          result.push(`${elem.price}`)
+          result.push(elem.price)
+          // result.push(`${elem.price}`)
           return <div className="cards" key={id}>
             <CancelIcon color='error' style={{ marginRight: 150, cursor: 'pointer' }} onClick={() => deleteCard(elem.id)} />
 

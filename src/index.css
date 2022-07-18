@@ -41,6 +41,20 @@
   padding: 5px;
 }
 
+.link {
+  position: absolute;
+  top: 0;
+  left: 300px;
+  display: flex;
+
+}
+
+.h3 {
+  display: flex;
+  margin: 10px;
+  color: white;
+}
+
 span {
   cursor: pointer;
 }
@@ -74,4 +88,10 @@ span {
   position: absolute;
   top: 0;
   left: 900px;
+}
+
+.input {
+  position: absolute;
+  top: 100px;
+
 }

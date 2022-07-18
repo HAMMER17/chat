@@ -7,21 +7,22 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 // import product from '../products/Product';
 
 
-function Card({ title, img, price, love, sale, onPlus }) {
-  const [col, setCol] = React.useState(false)
+function Card({ title, img, price, love, sale, onPlus, onFavor, favoritest = false }) {
+  const [col, setCol] = React.useState(favoritest)
   const [sal, setSale] = React.useState(false)
-  function handle() {
-    setCol(!col)
 
-  }
   function onClickPlus() {
     onPlus({ title, img, price })
     setSale(!sal)
   }
+  function onClickFavor() {
+    onFavor({ title, img, price })
+    setCol(!col)
+  }
   return (
 
     <div className='cards'>
-      <span onClick={handle} style={{ color: col ? 'red' : 'black' }}><FavoriteIcon />{love}</span>
+      <span onClick={onClickFavor} style={{ color: col ? 'red' : 'black' }}><FavoriteIcon />{love}</span>
       <h2>{title}</h2>
       <img src={img} width={100} height={100} alt="img" />
       <h5>{price}</h5>

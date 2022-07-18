@@ -12,7 +12,7 @@ function Input() {
       <TextField onChange={text} id="standard-basic" label="поиск..." variant="standard" value={val} />
       <ClearIcon style={{ cursor: 'pointer' }} onClick={() => setVal('')} />
 
-      <h2>clock: {val} </h2>
+      <h2 style={{ marginTop: 20 }}>clock: {val} </h2>
     </div>
   )
 }
