@@ -15,13 +15,15 @@ function Header({ onClickCard }) {
           <h3 className='h3'>главная</h3>
         </Link>
         <Link to={'/favorite'}>
-          <h3 className='h3'><FavoriteIcon /></h3>
+          <h3 className='h3'><FavoriteIcon className='fav' /></h3>
 
         </Link>
       </div>
+
       <IconButton className='button' color='inherit' aria-label="add to shopping cart">
         <h6 style={{ margin: 15 }}>моя корзина</h6>
-        <Badge badgeContent={7} color="secondary" ><AddShoppingCart onClick={onClickCard} /></Badge>
+
+        <Badge badgeContent={77} color="secondary" ><AddShoppingCart onClick={onClickCard} /></Badge>
         <Avatar src='../images/I.jpeg' style={{ margin: 30 }}></Avatar>
       </IconButton>
     </div>

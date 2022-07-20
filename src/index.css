@@ -95,3 +95,7 @@ span {
   top: 100px;
 
 }
+
+.fav:hover {
+  color: red;
+}

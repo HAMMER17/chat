@@ -10,6 +10,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Favorite from './components/Favorite';
 import Home from './components/Home';
+import Pay from './pages/Pay';
 
 
 function App() {
@@ -37,6 +38,11 @@ function App() {
     setFavor(prev => [...prev, obj])
     console.log(obj)
   }
+  const delLike = (id) => {
+    axios.delete(`https://62d2e401afb0b03fc5ad3c39.mockapi.io/favor/${id}`)
+    setFavor((prev) => prev.filter(el => el.id !== id))
+    console.log(id)
+  }
   const delCard = (id) => {
     axios.delete(`https://62d2e401afb0b03fc5ad3c39.mockapi.io/cards/${id}`)
     setCardItems((prev) => prev.filter(el => el.id !== id))
@@ -46,11 +52,11 @@ function App() {
 
     <>
       <Router>
-        <Header onClickCard={() => setCardOpen(true)} />
+        <Header onClickCard={() => setCardOpen(true)} items={cardItems} />
         {cardOpen ? <Basket deleteCard={delCard} items={cardItems} onClickClose={() => setCardOpen(false)} /> : null}
         <Routes>
 
-          <Route path='/favorite' element={<Favorite items={favor} />} />
+          <Route path='/favorite' element={<Favorite items={favor} deleteLike={delLike} />} />
 
           <Route path='/' element={<Home
             items={items}
@@ -61,7 +67,7 @@ function App() {
             cardItems={cardItems}
             addFavorite={addFavorite}
           />} />
-
+          <Route path='/pay' element={<Pay />} />
         </Routes>
       </Router>
 
