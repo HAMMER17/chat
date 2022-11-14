@@ -9,7 +9,7 @@ const Chat = () => {
     <div className='chat'>
       <div className="chatInfo">
         <span>{data.user?.displayName}</span>
-        <img style={{ width: 50, marginRight: 150 }} src={data.user?.photoURL} alt='3' />
+        <img style={{ width: 40, marginRight: 250, height: 40, borderRadius: '50%' }} src={data.user?.photoURL} alt='3' />
 
         <div className="chatIcon">
           <i className="bi bi-camera-reels-fill"></i>

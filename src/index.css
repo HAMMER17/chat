@@ -1,5 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
+
 * {
   padding: 0;
   margin: 0;
@@ -60,8 +61,8 @@
 
 .container {
   display: flex;
-  width: 65%;
-  height: 80%;
+  width: 85%;
+  height: 90%;
   border-radius: 10px;
   border: 1px solid white;
   overflow: hidden;
@@ -104,11 +105,18 @@
 
 .container .sidebar .navbar button {
   background: green;
-  color: white;
-  width: 50px;
+  color: orange;
+  width: 60px;
   height: 30px;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
+}
+
+.container .sidebar .navbar button:hover {
+  background: orange;
+  transform: scale(1.1);
+  color: green;
 }
 
 .search {
@@ -121,7 +129,6 @@
 }
 
 .search .searchForm input {
-  color: white;
 
   background: transparent;
   border: none;
@@ -142,7 +149,7 @@
 }
 
 .userChat:hover {
-  background: blueviolet;
+  background: rgb(124, 3, 236);
 }
 
 .search .userChat img {
@@ -164,8 +171,9 @@
   justify-content: space-between;
   height: 30px;
   padding: 10px;
-  background: linear-gradient(115deg, black, grey);
+  background: linear-gradient(115deg, blue, grey, blueviolet);
   color: white;
+  color: b;
 }
 
 .chatIcon i {
@@ -175,7 +183,7 @@
 
 .messages {
   padding: 10px;
-  background: linear-gradient(red, pink, white);
+  background: linear-gradient(blueviolet, pink, white);
   height: calc(100% - 160px);
   overflow: scroll;
 }
@@ -196,6 +204,7 @@
   border: none;
   outline: none;
   font-size: 20px;
+  color: white;
 }
 
 .input input::placeholder {
@@ -218,6 +227,23 @@
   margin: 10px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.input .send button:hover {
+  background: blue;
+  color: white;
+  transform: scale(1.1);
+}
+
+.foto {
+  width: 40px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.foto:hover {
+  transform: scale(1.1);
+
 }
 
 .input .send i {

@@ -73,7 +73,7 @@ const Input = () => {
         <input type="file" name="" id="file" onChange={(e) => setImg(e.target.files[0])}
           style={{ display: 'none' }} placeholder='text...' />
         <label htmlFor="file">
-          <img src={Foto} alt="1" style={{ width: 30, padding: 10, color: 'black' }} />
+          <img src={Foto} alt="1" className='foto' />
         </label>
         <i className="bi bi-envelope-paper-fill"></i>
         <i className="bi bi-paperclip"></i>

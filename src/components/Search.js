@@ -16,12 +16,14 @@ const Search = () => {
       querySnapshot.forEach((doc) => {
         setUser(doc.data())
       });
+
     } catch (err) {
       setErr(true)
     }
   };
   const handleKey = (e) => {
     e.code === 'Enter' && handleSearch()
+
   }
   const handleSelect = async () => {
     const comdinedId = currentUser.uid > user.uid ? currentUser.uid + user.uid : user.uid + currentUser.uid
