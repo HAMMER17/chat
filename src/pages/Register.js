@@ -7,12 +7,15 @@ import { auth, storage, db } from '../firebase'
 import Logo from '../images/foto.png'
 import { Link, useNavigate } from 'react-router-dom';
 // import { writeUserData } from './db';
+import { useForm } from "react-hook-form";
 
 const Register = () => {
   const [err, setErr] = React.useState(false)
   const navigate = useNavigate()
 
-  const handleSubmit = async (e) => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const getSubmit = async (e) => {
     e.preventDefault()
     const displayName = e.target[0].value
     const email = e.target[1].value
@@ -48,7 +51,6 @@ const Register = () => {
       });
     } catch (err) {
       setErr(true);
-
     }
   };
 
@@ -56,12 +58,27 @@ const Register = () => {
     <div className='formContainer'>
       <div className="formWrapper">
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(getSubmit)}>
           <h5 className='logo'>My Chat</h5>
           <h3 className='title'>REGISTER</h3>
-          <input type="text" placeholder='name' />
+          <input type="text" placeholder='name' {...register('name',
+            {
+              require: 'Напишите ваше имя',
+              minLength: {
+                value: 2, message: 'Минимум 2 символа'
+              }
+            })}
+          />
+          <p style={{ fontSize: 15, color: 'red' }}>{errors?.name?.message}</p>
           <input type="email" placeholder='email' />
-          <input type="password" placeholder='password' />
+          <input type="password" placeholder='password' {...register('password',
+            {
+              require: 'Поле обязательно к заполнению',
+              minLength: {
+                value: 6, message: 'Минимум 6 символов'
+              }
+            })} />
+          <p style={{ fontSize: 15, color: 'red' }}>{errors?.password?.message}</p>
           <input type="file"
             style={{ display: 'none' }} id='file'
           />
@@ -78,4 +95,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Register;
