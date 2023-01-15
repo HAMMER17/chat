@@ -15,7 +15,7 @@ const Messages = () => {
       unSub()
     }
   }, [data.chatId])
-  console.log(message)
+
   return (
     <div className='messages'>
       {message.map(m => {

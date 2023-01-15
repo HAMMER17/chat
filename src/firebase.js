@@ -19,4 +19,4 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const storage = getStorage();
 export const db = getFirestore();
-export const dbr = getDatabase()
+// export const dbr = getDatabase()

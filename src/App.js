@@ -15,7 +15,7 @@ const App = () => {
     }
   }
 
-  // console.log(currentUser)
+
   return (
     <BrowserRouter>
       <Routes>
